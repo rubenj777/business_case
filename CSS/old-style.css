@@ -1,0 +1,322 @@
+/************* GENERAL **********/
+
+h1 {
+  display: inline-block;
+  font-family: "Arvo";
+}
+
+h2 {
+  display: inline-block;
+  font-family: "Arvo";
+  text-transform: uppercase;
+}
+
+input {
+  padding: 5px 10px;
+  font-weight: lighter;
+  border: none;
+  border-radius: 10px;
+  background: #efefef;
+}
+
+/******** CLASSES GENERALES ******/
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.btn {
+  background: #efefef;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 20px 0px;
+}
+
+.stars {
+  color: #ffad4e;
+  font-size: 10px;
+}
+
+/************ HEADER ************/
+
+header nav:first-child ul img {
+  width: 25px;
+  object-fit: contain;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header input {
+  width: 400px;
+  background-image: url(images/loupe.png);
+}
+
+header nav:first-of-type li:last-of-type {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+header #categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -30px;
+  color: #498c8a;
+  margin-bottom: 100px;
+}
+
+header div:last-child {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header div:last-child img {
+  width: 400px;
+}
+
+header div:last-child p {
+  font-family: "Arvo";
+  font-weight: bold;
+  font-size: large;
+  width: 500px;
+}
+
+/***************** MAIN *****************/
+
+main {
+  margin-top: 50px;
+}
+
+/*************** SECTIONS **********************/
+
+/********** PRODUITS ***********/
+
+section {
+  margin-top: 50px;
+}
+
+section ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section div ul li img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border: 2px solid #efefef;
+  box-shadow: 1px 1px 7px #efefef;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+section div ul li p {
+  margin: 0;
+}
+
+section div ul li p:last-of-type {
+  font-family: "Arvo";
+  font-weight: bold;
+  color: #498c8a;
+}
+
+/******************* PAY **********************/
+
+#pay hr {
+  width: 100%;
+  color: #efefef;
+}
+
+#pay ul {
+  width: 80%;
+  margin: auto;
+}
+
+#pay ul li {
+  color: #498c8a;
+}
+
+#pay ul li div {
+  display: flex;
+  align-items: center;
+}
+
+#pay ul li div i {
+  margin-right: 10px;
+}
+
+#pay ul li:nth-of-type(1n + 4) {
+  font-size: 30px;
+}
+
+/********** CLIENTS **********/
+
+#clients {
+  display: flex;
+  justify-content: space-between;
+}
+
+section #clients-review {
+  width: 45%;
+}
+
+section #clients-review ul {
+  display: flex;
+  flex-direction: column;
+}
+
+section #clients-review ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #efefef;
+  box-shadow: 1px 1px 7px #efefef;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+section #clients-review ul li div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+section #clients-review ul li div span {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+section #clients-review ul li p {
+  margin: 0;
+}
+
+section #clients-review ul img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/****************** CONSEILS ******************/
+
+#conseils {
+  width: 50%;
+}
+
+#conseils ul {
+  flex-wrap: wrap;
+}
+
+#conseils ul li {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+#conseils ul li img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 1px 1px 7px #efefef;
+}
+
+#conseils ul li p {
+  margin: 0;
+  text-align: left;
+}
+
+#conseils ul li p:last-of-type {
+  color: #498c8a;
+}
+
+/*************** MAP **************/
+
+section:last-of-type {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+section:last-of-type iframe {
+  border-radius: 10px;
+  box-shadow: 1px 1px 7px #efefef;
+}
+
+section:last-of-type article:first-of-type {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+/**************** FORM *************/
+
+section:last-of-type img {
+  width: 500px;
+  object-fit: contain;
+}
+
+/****************** FOOTER *****************/
+
+footer {
+  background: #498c8a;
+  color: white;
+  margin-top: 50px;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer div ul li {
+  margin-top: 20px;
+}
+
+footer div ul:nth-child(3) {
+  font-size: 30px;
+  display: flex;
+}
+
+footer div ul i {
+  margin: 0px 20px;
+}
+
+footer div form {
+  width: 30%;
+}
+
+footer div form input {
+  width: 80%;
+}
+
+footer div form legend {
+  margin-bottom: 10px;
+}
+
+footer div p {
+  width: 15%;
+}
