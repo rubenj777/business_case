@@ -1,0 +1,23 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <div class="form-group">
+    <h2>Se connecter</h2>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Courriel"
+      [(ngModel)]="id"
+    />
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Mot de passe"
+      [(ngModel)]="password"
+    />
+    <input
+      type="submit"
+      value="Connexion"
+      [disabled]="!form.valid"
+      class="btn"
+    />
+  </div>
+</form>

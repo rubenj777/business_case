@@ -1,0 +1,31 @@
+form {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  .form-group {
+    h2 {
+      color: white;
+      margin-bottom: 25px;
+    }
+    margin: 0;
+    width: 350px;
+    height: 250px;
+    border-radius: 7px;
+    background-color: #498c8a;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    input {
+      margin-bottom: 15px;
+      width: 200px;
+    }
+    input[type="submit"] {
+      background-color: whitesmoke;
+      width: 100px;
+      margin: 0;
+    }
+  }
+}
