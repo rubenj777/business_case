@@ -3,11 +3,11 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-connection',
-  templateUrl: './connection.component.html',
-  styleUrls: ['./connection.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class ConnectionComponent implements OnInit {
+export class LoginComponent implements OnInit {
   public id!: string;
   public password!: string;
   constructor(private router: Router) {}

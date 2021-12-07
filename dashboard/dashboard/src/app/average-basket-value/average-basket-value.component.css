@@ -1,0 +1,19 @@
+div {
+  margin: 10px 0px;
+}
+
+div p {
+  margin: 0;
+}
+
+div fa-icon {
+  margin: 0px 5px;
+}
+
+div .arrow-up {
+  color: #4aaf05;
+}
+
+div .arrow-down {
+  color: #eb001b;
+}
