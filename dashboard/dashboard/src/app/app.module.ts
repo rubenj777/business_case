@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { GeneralComponent } from './general/general.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {
   FontAwesomeModule,
   FaIconLibrary,
 } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
 import { NbBasketsComponent } from './nb-baskets/nb-baskets.component';
 import { NbOrdersComponent } from './nb-orders/nb-orders.component';
@@ -20,6 +18,13 @@ import { AverageBasketValueComponent } from './average-basket-value/average-bask
 import { BasketRecurrenceComponent } from './basket-recurrence/basket-recurrence.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { TotalSalesComponent } from './total-sales/total-sales.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarComponent } from './calendar/calendar.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserModule } from '@angular/platform-browser';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -34,14 +39,20 @@ import { TotalSalesComponent } from './total-sales/total-sales.component';
     BasketRecurrenceComponent,
     LineChartComponent,
     TotalSalesComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     FontAwesomeModule,
     FormsModule,
+    ReactiveFormsModule,
     NgChartsModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

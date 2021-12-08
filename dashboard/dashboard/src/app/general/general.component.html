@@ -1,29 +1,29 @@
-<nav>
-  <ul>
-    <li>
-      <h2>Tableau de bord</h2>
-    </li>
-    <li>
-      <a routerLink="/login" routerLinkActive="active"
-        ><fa-icon icon="sign-out-alt"></fa-icon
-      ></a>
-    </li>
-  </ul>
-</nav>
-<div id="wrapper">
-  <div>
-    <app-total-sales></app-total-sales>
-    <app-average-basket-value></app-average-basket-value>
-    <app-line-chart></app-line-chart>
-  </div>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened class="nav">
+    <div id="title">Tableau de bord</div>
+    <app-calendar></app-calendar>
+    <a routerLink="/login" routerLinkActive="active"
+      ><fa-icon icon="sign-out-alt"></fa-icon
+    ></a>
+  </mat-drawer>
 
-  <div id="ordersInfos">
-    <app-nb-orders></app-nb-orders>
-    <app-nb-baskets></app-nb-baskets>
-    <app-nb-new-clients></app-nb-new-clients>
-    <app-nb-visits></app-nb-visits>
-  </div>
-  <div id="pieCharts">
-    <app-basket-recurrence></app-basket-recurrence>
-  </div>
-</div>
+  <mat-drawer-content>
+    <div id="wrapper">
+      <div id="wrapper2">
+        <div>
+          <app-line-chart></app-line-chart>
+        </div>
+        <div id="ordersInfos">
+          <app-nb-orders class="infoCard"></app-nb-orders>
+          <app-nb-baskets class="infoCard"></app-nb-baskets>
+          <app-nb-new-clients class="infoCard"></app-nb-new-clients>
+          <app-nb-visits class="infoCard"></app-nb-visits>
+        </div>
+      </div>
+
+      <div id="pieCharts">
+        <app-basket-recurrence></app-basket-recurrence>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

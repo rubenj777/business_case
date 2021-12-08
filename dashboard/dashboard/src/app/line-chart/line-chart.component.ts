@@ -24,9 +24,7 @@ export class LineChartComponent implements OnInit {
   constructor() {
     this.barChartData = [
       {
-        data: [
-          19056.23, 19562.96, 19566.15, 18965.46, 19256.97, 19355.13, 19540.87,
-        ],
+        data: [1056.23, 1562.96, 1566.15, 1565.46, 1256.97, 1355.13, 1540.87],
         label: 'Montant total des ventes',
         backgroundColor: '#498C8A',
         borderColor: '#498C8A',

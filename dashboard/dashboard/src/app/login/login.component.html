@@ -6,18 +6,21 @@
       class="form-control"
       placeholder="Courriel"
       [(ngModel)]="id"
+      name="name"
     />
     <input
       type="password"
       class="form-control"
       placeholder="Mot de passe"
       [(ngModel)]="password"
+      name="password"
     />
     <input
       type="submit"
       value="Connexion"
       [disabled]="!form.valid"
       class="btn"
+      name="submit"
     />
   </div>
 </form>

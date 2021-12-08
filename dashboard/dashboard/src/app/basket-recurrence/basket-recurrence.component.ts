@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartType, ChartDataset } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
+import { ChartType, ChartDataset, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-basket-recurrence',
@@ -8,21 +7,35 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrls: ['./basket-recurrence.component.scss'],
 })
 export class BasketRecurrenceComponent implements OnInit {
-  data = {
-    labels: ['Red', 'Blue', 'Yellow'],
-    datasets: [
-      {
-        label: 'My First Dataset',
-        data: [300, 50, 100],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-        ],
-        hoverOffset: 4,
-      },
-    ],
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
   };
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = false;
+  public pieChartPlugins = [];
+  public pieChartData: ChartDataset[] = [
+    {
+      data: [0.1],
+      label: 'Récurrence panier',
+      backgroundColor: '#498C8A',
+      borderColor: '#498C8A',
+      pointBackgroundColor: '#498C8A',
+      pointBorderColor: '#498C8A',
+      pointHoverBackgroundColor: '#498C8A',
+      pointHoverBorderColor: '#00000',
+    },
+    {
+      data: [0.9],
+      label: 'Récurrence panier',
+      backgroundColor: '#269E49',
+      borderColor: '#269E49',
+      pointBackgroundColor: '#269E49',
+      pointBorderColor: '#269E49',
+      pointHoverBackgroundColor: '#269E49',
+      pointHoverBorderColor: '#00000',
+    },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
