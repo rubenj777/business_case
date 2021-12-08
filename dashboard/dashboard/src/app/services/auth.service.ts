@@ -4,7 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  public isConnected = true;
+  public user: {
+    id: string;
+    isConnected: boolean;
+  };
 
-  constructor() {}
+  constructor() {
+    this.user = { id: 'jean', isConnected: true };
+    localStorage.setItem('user', JSON.stringify(this.user));
+    let getData = localStorage.getItem('user')!;
+    JSON.parse(getData);
+  }
 }

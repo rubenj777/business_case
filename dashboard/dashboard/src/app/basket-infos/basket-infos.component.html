@@ -1,6 +1,7 @@
-<div style="width: 150px" class="pieChart">
+<div style="width: 300px" class="pieChart">
   <canvas
     baseChart
+    [labels]="pieChartLabels"
     [datasets]="pieChartData"
     [plugins]="pieChartPlugins"
     [legend]="pieChartLegend"

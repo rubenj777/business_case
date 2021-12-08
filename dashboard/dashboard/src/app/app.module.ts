@@ -15,7 +15,7 @@ import { NbOrdersComponent } from './nb-orders/nb-orders.component';
 import { NbNewClientsComponent } from './nb-new-clients/nb-new-clients.component';
 import { NbVisitsComponent } from './nb-visits/nb-visits.component';
 import { AverageBasketValueComponent } from './average-basket-value/average-basket-value.component';
-import { BasketRecurrenceComponent } from './basket-recurrence/basket-recurrence.component';
+import { OrdersInfosComponent } from './orders-infos/orders-infos.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { TotalSalesComponent } from './total-sales/total-sales.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BasketInfosComponent } from './basket-infos/basket-infos.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +37,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NbNewClientsComponent,
     NbVisitsComponent,
     AverageBasketValueComponent,
-    BasketRecurrenceComponent,
+    OrdersInfosComponent,
     LineChartComponent,
     TotalSalesComponent,
     CalendarComponent,
+    BasketInfosComponent,
   ],
   imports: [
     BrowserModule,

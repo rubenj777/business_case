@@ -39,16 +39,27 @@ $dashboard-theme: mat.define-light-theme(
 .nav {
   font-size: 25px;
   border-right: solid #efefef;
-  #title {
-    margin: 30px 25px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  h2 {
+    margin: 30px 25px 0px;
     font-family: Arvo, serif;
     font-weight: bold;
     font-size: larger;
     color: #498c8a;
   }
-
-  a {
-    color: #498c8a;
+  #logout {
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    bottom: 20px;
+    right: 260px;
+    transform: rotate(180deg);
+    a {
+      color: #498c8a;
+    }
   }
 }
 
@@ -60,15 +71,24 @@ $dashboard-theme: mat.define-light-theme(
 #wrapper {
   width: 90%;
   margin: auto;
+
   #wrapper2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    #chartLine {
+      width: 50%;
+      app-line-chart {
+        display: flex;
+        justify-content: center;
+      }
+    }
     #ordersInfos {
-      justify-content: flex-end;
+      justify-content: flex-start;
       display: flex;
       flex-wrap: wrap;
       margin: 50px 0px;
+      width: 50%;
       .infoCard {
         background-color: white;
         margin-top: 25px;
@@ -78,6 +98,7 @@ $dashboard-theme: mat.define-light-theme(
   }
 
   #pieCharts {
+    width: 50%;
     display: flex;
     justify-content: space-between;
     margin: 25px 0px;

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BasketRecurrenceComponent } from './basket-recurrence.component';
+import { BasketInfosComponent } from './basket-infos.component';
 
-describe('BasketRecurrenceComponent', () => {
-  let component: BasketRecurrenceComponent;
-  let fixture: ComponentFixture<BasketRecurrenceComponent>;
+describe('BasketInfosComponent', () => {
+  let component: BasketInfosComponent;
+  let fixture: ComponentFixture<BasketInfosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BasketRecurrenceComponent ]
+      declarations: [ BasketInfosComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BasketRecurrenceComponent);
+    fixture = TestBed.createComponent(BasketInfosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,8 @@
 mat-drawer-container {
   height: 100vh;
 }
+
+mat-drawer-inner-container {
+  display: flex;
+  align-items: flex-end;
+}
