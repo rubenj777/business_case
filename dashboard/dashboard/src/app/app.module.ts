@@ -25,7 +25,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { BasketInfosComponent } from './basket-infos/basket-infos.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import { BasketInfosComponent } from './basket-infos/basket-infos.component';
     LineChartComponent,
     TotalSalesComponent,
     CalendarComponent,
-    BasketInfosComponent,
   ],
   imports: [
     BrowserModule,
