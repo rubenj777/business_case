@@ -10,7 +10,7 @@ export class AuthService {
   };
 
   constructor() {
-    this.user = { id: 'jean', isConnected: true };
+    this.user = { id: 'ruben', isConnected: true };
     localStorage.setItem('user', JSON.stringify(this.user));
     let getData = localStorage.getItem('user')!;
     JSON.parse(getData);

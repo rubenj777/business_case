@@ -1,31 +1,8 @@
 <mat-drawer-container>
-  <mat-drawer mode="side" opened class="nav">
-    <h2>Tableau de bord</h2>
-    <app-calendar></app-calendar>
-    <div id="logout">
-      <a routerLink="/login" routerLinkActive="active"
-        ><fa-icon icon="sign-out-alt"></fa-icon
-      ></a>
-    </div>
-  </mat-drawer>
-
+  <mat-drawer mode="side" opened="" class="nav"
+    ><app-side-bar></app-side-bar
+  ></mat-drawer>
   <mat-drawer-content>
-    <div id="wrapper">
-      <div id="wrapper2">
-        <div id="ordersInfos">
-          <app-nb-orders class="infoCard"></app-nb-orders>
-          <app-nb-baskets class="infoCard"></app-nb-baskets>
-          <app-nb-new-clients class="infoCard"></app-nb-new-clients>
-          <app-nb-visits class="infoCard"></app-nb-visits>
-        </div>
-        <div id="chartLine">
-          <app-line-chart></app-line-chart>
-        </div>
-      </div>
-
-      <div id="pieCharts">
-        <app-orders-infos></app-orders-infos>
-      </div>
-    </div>
+    <app-main></app-main>
   </mat-drawer-content>
 </mat-drawer-container>

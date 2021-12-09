@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss'],
+  selector: 'app-side-bar',
+  templateUrl: './side-bar.component.html',
+  styleUrls: ['./side-bar.component.scss'],
 })
-export class CalendarComponent implements OnInit {
+export class SideBarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

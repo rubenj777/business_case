@@ -10,21 +10,22 @@ import {
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
-import { NbBasketsComponent } from './nb-baskets/nb-baskets.component';
-import { NbOrdersComponent } from './nb-orders/nb-orders.component';
-import { NbNewClientsComponent } from './nb-new-clients/nb-new-clients.component';
-import { NbVisitsComponent } from './nb-visits/nb-visits.component';
-import { AverageBasketValueComponent } from './average-basket-value/average-basket-value.component';
-import { OrdersInfosComponent } from './orders-infos/orders-infos.component';
-import { LineChartComponent } from './line-chart/line-chart.component';
-import { TotalSalesComponent } from './total-sales/total-sales.component';
+import { NbBasketsComponent } from './general/main/nb-baskets/nb-baskets.component';
+import { NbOrdersComponent } from './general/main/nb-orders/nb-orders.component';
+import { NbNewClientsComponent } from './general/main/nb-new-clients/nb-new-clients.component';
+import { NbVisitsComponent } from './general/main/nb-visits/nb-visits.component';
+import { AverageBasketValueComponent } from './general/main/average-basket-value/average-basket-value.component';
+import { OrdersInfosComponent } from './general/main/orders-infos/orders-infos.component';
+import { LineChartComponent } from './general/main/line-chart/line-chart.component';
+import { TotalSalesComponent } from './general/main/total-sales/total-sales.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarComponent } from './calendar/calendar.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SideBarComponent } from './general/side-bar/side-bar.component';
+import { MainComponent } from './general/main/main.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     OrdersInfosComponent,
     LineChartComponent,
     TotalSalesComponent,
-    CalendarComponent,
+    SideBarComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
