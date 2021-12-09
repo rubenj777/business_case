@@ -1,8 +1,17 @@
-<app-line-chart></app-line-chart>
-<app-nb-baskets></app-nb-baskets>
-<app-nb-new-clients></app-nb-new-clients>
-<app-nb-orders></app-nb-orders>
-<app-nb-visits></app-nb-visits>
-<app-orders-infos></app-orders-infos>
-<app-total-sales></app-total-sales>
-<app-average-basket-value></app-average-basket-value>
+<div id="wrapper">
+  <div id="wrapper2">
+    <app-total-sales id="totalSales"></app-total-sales>
+    <app-line-chart></app-line-chart>
+  </div>
+  <div id="pie">
+    <app-pie-chart></app-pie-chart>
+  </div>
+
+  <div id="ordersInfos">
+    <app-average-basket-value class="infoCard"></app-average-basket-value>
+    <app-nb-baskets class="infoCard"></app-nb-baskets>
+    <app-nb-new-clients class="infoCard"></app-nb-new-clients>
+    <app-nb-orders class="infoCard"></app-nb-orders>
+    <app-nb-visits class="infoCard"></app-nb-visits>
+  </div>
+</div>

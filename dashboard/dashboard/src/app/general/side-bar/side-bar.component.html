@@ -1,5 +1,5 @@
 <h2>Tableau de bord</h2>
-<div>
+<div id="calendar">
   <mat-form-field appearance="fill">
     <mat-label>Sélectionnez une période</mat-label>
     <mat-date-range-input [rangePicker]="picker">
@@ -11,7 +11,7 @@
   </mat-form-field>
 </div>
 <div id="logout">
-  <a routerLink="/login" routerLinkActive="active"
+  <a routerLink="/login" routerLinkActive="active" (click)="logout()"
     ><fa-icon icon="sign-out-alt"></fa-icon
   ></a>
 </div>

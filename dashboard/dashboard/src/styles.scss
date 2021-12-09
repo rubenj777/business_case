@@ -36,20 +36,13 @@ $dashboard-theme: mat.define-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
-.nav {
+mat-drawer {
   font-size: 25px;
   border-right: solid #efefef;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  h2 {
-    margin: 30px 25px 0px;
-    font-family: Arvo, serif;
-    font-weight: bold;
-    font-size: larger;
-    color: #498c8a;
-  }
   #logout {
     width: 80%;
     margin: auto;
@@ -71,37 +64,54 @@ $dashboard-theme: mat.define-light-theme(
 #wrapper {
   width: 90%;
   margin: auto;
-
   #wrapper2 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    #chartLine {
-      width: 50%;
-      app-line-chart {
-        display: flex;
-        justify-content: center;
-      }
-    }
-    #ordersInfos {
-      justify-content: flex-start;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 50px 0px;
-      width: 50%;
-      .infoCard {
-        background-color: white;
-        margin-top: 25px;
-        width: 77%;
+    height: 100vh;
+    #totalSales {
+      h4 {
+        margin: 50px 0px 0px;
+        font-size: x-large;
       }
     }
   }
 
-  #pieCharts {
-    width: 50%;
+  #pie {
+    height: 100vh;
+  }
+
+  #ordersInfos {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin: 25px 0px;
+    // height: 100vh;
+    .infoCard {
+      p {
+        margin: 0;
+      }
+      font-size: large;
+      width: 40%;
+      margin: 10px 0px;
+      padding: 25px;
+      border: solid 2px #efefef;
+      border-radius: 7px;
+
+      fa-icon {
+        margin-right: 10px;
+      }
+      .arrow-up {
+        color: #4aaf05;
+      }
+      .arrow-down {
+        color: #eb001b;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
   }
 }
 

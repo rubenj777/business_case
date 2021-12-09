@@ -22,6 +22,9 @@ export class AuthGuard implements CanActivate {
   constructor(public authServ: AuthService, private router: Router) {
     if (!this.authServ.user.isConnected) {
       this.router.navigate(['/login']);
+    } else {
+      this.router.navigate(['/general']);
+      console.log(this.authServ.user);
     }
   }
 }

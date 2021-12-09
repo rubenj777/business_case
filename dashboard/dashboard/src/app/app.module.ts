@@ -15,7 +15,7 @@ import { NbOrdersComponent } from './general/main/nb-orders/nb-orders.component'
 import { NbNewClientsComponent } from './general/main/nb-new-clients/nb-new-clients.component';
 import { NbVisitsComponent } from './general/main/nb-visits/nb-visits.component';
 import { AverageBasketValueComponent } from './general/main/average-basket-value/average-basket-value.component';
-import { OrdersInfosComponent } from './general/main/orders-infos/orders-infos.component';
+import { PieChartComponent } from './general/main/pie-chart/pie-chart.component';
 import { LineChartComponent } from './general/main/line-chart/line-chart.component';
 import { TotalSalesComponent } from './general/main/total-sales/total-sales.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,7 +37,7 @@ import { MainComponent } from './general/main/main.component';
     NbNewClientsComponent,
     NbVisitsComponent,
     AverageBasketValueComponent,
-    OrdersInfosComponent,
+    PieChartComponent,
     LineChartComponent,
     TotalSalesComponent,
     SideBarComponent,

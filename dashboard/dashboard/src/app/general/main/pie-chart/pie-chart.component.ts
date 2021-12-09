@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartDataset, ChartOptions } from 'chart.js';
 
 @Component({
-  selector: 'app-orders-infos',
-  templateUrl: './orders-infos.component.html',
-  styleUrls: ['./orders-infos.component.scss'],
+  selector: 'app-pie-chart',
+  templateUrl: './pie-chart.component.html',
+  styleUrls: ['./pie-chart.component.scss'],
 })
-export class OrdersInfosComponent implements OnInit {
+export class PieChartComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -17,7 +17,7 @@ export class OrdersInfosComponent implements OnInit {
     'Paniers convertis',
   ];
   public pieChartType: ChartType = 'doughnut';
-  public pieChartLegend = false;
+  public pieChartLegend = true;
   public pieChartPlugins = [];
   public pieChartData: ChartDataset[] = [];
 
@@ -25,7 +25,6 @@ export class OrdersInfosComponent implements OnInit {
     this.pieChartData = [
       {
         data: [18, 79, 59, 66],
-        backgroundColor: ['#EF8954', '#FUSO15', '#7956S', '#DFZ98'],
       },
     ];
   }
