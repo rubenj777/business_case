@@ -17,7 +17,7 @@ export class PieChartComponent implements OnInit {
     'Paniers convertis',
   ];
   public pieChartType: ChartType = 'doughnut';
-  public pieChartLegend = true;
+  public pieChartLegend = false;
   public pieChartPlugins = [];
   public pieChartData: ChartDataset[] = [];
 

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MatStartDate } from '@angular/material/datepicker';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,9 +9,15 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./side-bar.component.scss'],
 })
 export class SideBarComponent implements OnInit {
+  public startDate!: Date;
+  public endDate!: Date;
   constructor(private auth: AuthService) {}
 
   ngOnInit(): void {}
+
+  getDate() {
+    console.log(this.startDate);
+  }
 
   logout() {
     this.auth.logout();

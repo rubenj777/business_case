@@ -17,14 +17,11 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    return this.authServ.user.isConnected;
+    return this.authServ.connected;
   }
   constructor(public authServ: AuthService, private router: Router) {
-    if (!this.authServ.user.isConnected) {
+    if (this.authServ.connected) {
       this.router.navigate(['/login']);
-    } else {
-      this.router.navigate(['/general']);
-      console.log(this.authServ.user);
     }
   }
 }

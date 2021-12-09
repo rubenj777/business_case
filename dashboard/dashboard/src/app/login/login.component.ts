@@ -9,14 +9,22 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public id!: string;
+  public email!: string;
   public password!: string;
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService) {
+    // if (this.auth.user.isConnected) {
+    //   this.router.navigate(['/general']);
+    // }
+    if (this.auth.connected) {
+      this.router.navigate(['/general']);
+    }
+  }
 
   ngOnInit(): void {}
 
   submit(form: NgForm) {
-    this.auth.login();
-    this.router.navigate(['/general']);
+    this.auth.login(this.email, this.password);
+
+    // this.router.navigate(['/general']);
   }
 }

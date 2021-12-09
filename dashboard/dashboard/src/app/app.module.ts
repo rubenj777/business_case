@@ -26,6 +26,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SideBarComponent } from './general/side-bar/side-bar.component';
 import { MainComponent } from './general/main/main.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MainComponent } from './general/main/main.component';
     MatNativeDateModule,
     MatSidenavModule,
     MatFormFieldModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
