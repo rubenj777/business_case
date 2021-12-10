@@ -9,22 +9,23 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public email!: string;
-  public password!: string;
-  constructor(private router: Router, private auth: AuthService) {
-    // if (this.auth.user.isConnected) {
-    //   this.router.navigate(['/general']);
-    // }
-    if (this.auth.connected) {
-      this.router.navigate(['/general']);
-    }
-  }
+  // private api_url =
+  //   'https://g0lkzlavh1.execute-api.eu-west-3.amazonaws.com/dev/';
+  public email = 'ruben@hb.fr';
+  public password = 'password';
+  private token!: string;
+  public isConnected = false;
+  constructor(private router: Router, private auth: AuthService) {}
 
   ngOnInit(): void {}
 
   submit(form: NgForm) {
-    this.auth.login(this.email, this.password);
-
-    // this.router.navigate(['/general']);
+    this.auth.login(this.email, this.password).then((res: boolean) => {
+      if (res) {
+        this.router.navigate(['/general']);
+      } else {
+        alert('id incorrect');
+      }
+    });
   }
 }

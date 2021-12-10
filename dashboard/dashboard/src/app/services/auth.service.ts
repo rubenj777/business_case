@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { getAllJSDocTags } from 'typescript';
 // import { User } from '../user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { connected } from 'process';
 
 type DataLoginServ = {
   token: string;
@@ -20,33 +19,21 @@ type DataStatsServ = {
   providedIn: 'root',
 })
 export class AuthService {
-  // public user: User;
   private api_url =
     'https://g0lkzlavh1.execute-api.eu-west-3.amazonaws.com/dev/';
   private token: string = '';
   public connected = false;
   public recurrence!: number;
 
-  constructor(private http: HttpClient) {
-    this.connected = JSON.parse(localStorage.getItem('connected')!);
-    console.log(this.connected);
-  }
+  constructor(private http: HttpClient) {}
 
-  localStorage() {
-    localStorage.setItem('connected', JSON.stringify(this.connected));
-    let getData = JSON.parse(localStorage.getItem('connected')!);
-    console.log(getData.connected);
-  }
-
-  login(email: string, password: string) {
-    // this.user.isConnected = true;
-    // this.localStorage();
-    this.http
+  login(email: string, password: string): Promise<boolean> {
+    return this.http
       .post(
         this.api_url + 'login',
         JSON.stringify({
-          email: 'ruben@hb.fr',
-          password: 'password',
+          email: email,
+          password: password,
         })
       )
       .toPromise()
@@ -55,30 +42,13 @@ export class AuthService {
           let dataServ = data as DataLoginServ;
           this.token = dataServ.token;
           this.connected = true;
+          localStorage.setItem('connected', 'true');
+          console.log(data);
+          return true;
         },
         (err) => {
-          console.log(err.status);
-        }
-      );
-  }
-
-  getStats() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: this.token,
-      }),
-    };
-    this.http
-      .get(this.api_url + 'stats/2001-01-01/2004-01-01', httpOptions)
-      .toPromise()
-      .then(
-        (res) => {
-          let dataReceived = res as DataStatsServ;
-          this.recurrence = dataReceived.recurrence;
-          console.log(dataReceived);
-        },
-        (err) => {
+          this.logout();
+          return false;
           console.log(err.status);
         }
       );
@@ -86,6 +56,28 @@ export class AuthService {
 
   logout() {
     this.connected = false;
-    this.localStorage();
+    localStorage.setItem('connected', 'false');
   }
+
+  // getStats() {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       Authorization: this.token,
+  //     }),
+  //   };
+  //   this.http
+  //     .get(this.api_url + 'stats/2001-01-01/2004-01-01', httpOptions)
+  //     .toPromise()
+  //     .then(
+  //       (res) => {
+  //         let dataReceived = res as DataStatsServ;
+  //         this.recurrence = dataReceived.recurrence;
+  //         console.log(dataReceived);
+  //       },
+  //       (err) => {
+  //         console.log(err.status);
+  //       }
+  //     );
+  // }
 }
