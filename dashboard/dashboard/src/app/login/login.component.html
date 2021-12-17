@@ -1,3 +1,6 @@
+<div *ngIf="loginError" id="error">
+  <h3>Identifiants incorrects !</h3>
+</div>
 <form (ngSubmit)="submit(form)" #form="ngForm">
   <div class="form-group">
     <h2>Se connecter</h2>
@@ -19,7 +22,6 @@
       type="submit"
       value="Connexion"
       [disabled]="!form.valid"
-      class="btn"
       name="submit"
     />
   </div>

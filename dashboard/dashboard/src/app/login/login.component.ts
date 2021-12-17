@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +15,33 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  // private api_url =
-  //   'https://g0lkzlavh1.execute-api.eu-west-3.amazonaws.com/dev/';
-  public email = 'ruben@hb.fr';
-  public password = 'password';
+  // @ViewChild('toggle') toggle: ElementRef;
+
+  public email = '';
+  public password = '';
   private token!: string;
-  public isConnected = false;
-  constructor(private router: Router, private auth: AuthService) {}
+  public loginError!: boolean;
+  public getData: any;
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: AuthService,
+    private renderer: Renderer2
+  ) {
+    // this.renderer.listen('window', 'click', (e:Event) => {
+    //   if(e.target !== this.toggle.nativeElement && e.target!==this.)
+    // })
+  }
 
   ngOnInit(): void {}
 
   submit(form: NgForm) {
     this.auth.login(this.email, this.password).then((res: boolean) => {
       if (res) {
+        this.loginError = false;
         this.router.navigate(['/general']);
-      } else {
-        alert('id incorrect');
       }
+      this.loginError = true;
     });
   }
 }

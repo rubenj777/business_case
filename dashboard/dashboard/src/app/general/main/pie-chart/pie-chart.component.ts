@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartDataset, ChartOptions } from 'chart.js';
+import { Data } from 'src/app/general/models/data';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-pie-chart',
@@ -7,6 +9,11 @@ import { ChartType, ChartDataset, ChartOptions } from 'chart.js';
   styleUrls: ['./pie-chart.component.scss'],
 })
 export class PieChartComponent implements OnInit {
+  dataReceived: any;
+  public recurrence!: number;
+  public conversionsCommandes!: number;
+  public abandonsPaniers!: number;
+  public conversionsPaniers!: number;
   public pieChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -21,13 +28,21 @@ export class PieChartComponent implements OnInit {
   public pieChartPlugins = [];
   public pieChartData: ChartDataset[] = [];
 
-  constructor() {
+  constructor(public auth: AuthService) {
+    this.recurrence = this.auth.recurrence;
     this.pieChartData = [
       {
-        data: [18, 79, 59, 66],
+        data: [
+          this.recurrence,
+          this.conversionsCommandes,
+          this.abandonsPaniers,
+          this.conversionsPaniers,
+        ],
       },
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.auth.recurrence);
+  }
 }

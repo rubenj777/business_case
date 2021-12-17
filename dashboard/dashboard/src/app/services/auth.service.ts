@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { getAllJSDocTags } from 'typescript';
 // import { User } from '../user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 type DataLoginServ = {
   token: string;
@@ -24,6 +25,11 @@ export class AuthService {
   private token: string = '';
   public connected = false;
   public recurrence!: number;
+  // public getData(): Observable<Object> {
+  //   return this.clientHttp.get(
+  //     'https://g0lkzlavh1.execute-api.eu-west-3.amazonaws.com/dev/'
+  //   );
+  // }
 
   constructor(private http: HttpClient) {}
 
@@ -54,30 +60,33 @@ export class AuthService {
       );
   }
 
-  logout() {
+  logout(): any {
     this.connected = false;
     localStorage.setItem('connected', 'false');
   }
 
-  // getStats() {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json',
-  //       Authorization: this.token,
-  //     }),
-  //   };
-  //   this.http
-  //     .get(this.api_url + 'stats/2001-01-01/2004-01-01', httpOptions)
-  //     .toPromise()
-  //     .then(
-  //       (res) => {
-  //         let dataReceived = res as DataStatsServ;
-  //         this.recurrence = dataReceived.recurrence;
-  //         console.log(dataReceived);
-  //       },
-  //       (err) => {
-  //         console.log(err.status);
-  //       }
-  //     );
-  // }
+  getStats() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token,
+      }),
+    };
+    this.http
+      .get(this.api_url + 'stats/2001-01-01/2004-01-01', httpOptions)
+      .toPromise()
+      .then(
+        (res) => {
+          let dataReceived = res as DataStatsServ;
+          this.recurrence = dataReceived.recurrence;
+          console.log(dataReceived);
+
+          return true;
+        },
+        (err) => {
+          return false;
+          console.log(err.status);
+        }
+      );
+  }
 }
